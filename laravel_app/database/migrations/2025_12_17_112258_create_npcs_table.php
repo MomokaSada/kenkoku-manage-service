@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('npcs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('biome_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('profession_id')->constrained()->cascadeOnDelete();
+            $table->string('name');
+            $table->string('type');
+            $table->integer('level');
             $table->timestamps();
         });
     }
