@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('items', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->boolean('is_original')->default(false);
-            $table->text('nbt')->nullable();
-            $table->timestamps();
+        Schema::create('quest_items', function (Blueprint $table) {
+            $table->foreignId('quest_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
+            $table->primary(['quest_id', 'item_id']);
+            $table->Integer('quantity');
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('quest_items');
     }
 };
