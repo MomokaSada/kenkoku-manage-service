@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Profession extends Model
 {
     protected $fillable = [
-        'name',
         'key',
     ];
     public function npcs()

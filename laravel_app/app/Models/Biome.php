@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Biome extends Model
 {
     protected $fillable = [
-        'name',
         'key',
     ];
 
