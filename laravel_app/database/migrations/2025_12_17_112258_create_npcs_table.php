@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('biome_id')->constrained()->cascadeOnDelete();
             $table->foreignId('profession_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('npc_type_id')->constrained()->cascadeOnDelete();
             $table->string('name')->unique();
-            $table->string('type');
             $table->integer('level');
             $table->timestamps();
         });

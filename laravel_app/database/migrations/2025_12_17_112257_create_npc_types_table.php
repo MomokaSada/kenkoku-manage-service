@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reward_items', function (Blueprint $table) {
-            $table->foreignId('quest_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
-            $table->primary(['quest_id', 'item_id']);
-            $table->Integer('quantity');
+        Schema::create('npc_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->timestamps();
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reward_items');
+        Schema::dropIfExists('npc_types');
     }
 };

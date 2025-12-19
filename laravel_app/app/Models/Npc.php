@@ -13,13 +13,8 @@ class Npc extends Model
         'type',
         'level',
     ];
-    public function quests()
+    public function trades()
     {
-        return $this->hasMany(Quest::class);
-    }
-
-    public function shops()
-    {
-        return $this->hasMany(Shop::class);
+        return $this->hasMany(Trade::class);
     }
 }
