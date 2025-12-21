@@ -17,7 +17,7 @@ class AuthController extends Controller
                 'name' => $request->name,
                 'password' => Hash::make($request->password),
             ]);
-            $token = $user->createToken('kenkoku', ['*'], now()->addDays(7))->plainTextToken;
+            $token = $user->createToken('kenkoku')->plainTextToken;
             return response()->json([
                 'user' => $user,
                 'token' => $token,

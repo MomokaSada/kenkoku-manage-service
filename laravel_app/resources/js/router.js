@@ -14,6 +14,24 @@ const routes = [
         name: 'Dashboard',
         meta: { requiresAuth: true }
     },
+    {
+        path: '/npcs',
+        component: () => import('./views/NpcList.vue'),
+        name: 'NpcList',
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/npcs/create',
+        component: () => import('./views/NpcForm.vue'),
+        name: 'NpcCreate',
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/npcs/:id/edit',
+        component: () => import('./views/NpcForm.vue'),
+        name: 'NpcEdit',
+        meta: { requiresAuth: true }
+    },
     // Optional: Redirect root to Login or Dashboard based on auth in future
     { path: '/', redirect: '/login' },
     // Catch all 404
