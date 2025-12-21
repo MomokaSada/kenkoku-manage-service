@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('rewards', function (Blueprint $table) {
             $table->id();
             $table->foreignId('trade_id')->constrained()->cascadeOnDelete()->comment('Links to the parent trade (cost/requirement)');
-            $table->foreignId('item_id')->constrained()->cascadeOnDelete()->nullable();
+            $table->foreignId('item_id')->nullable()->constrained()->cascadeOnDelete();
             $table->integer('quantity')->nullable();
-            $table->integer('price')->nullable()->comment('Money reward');
+            $table->integer('price')->nullable();
             $table->timestamps();
         });
     }

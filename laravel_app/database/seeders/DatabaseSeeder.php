@@ -17,8 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             NpcTypeSeeder::class,
-            BiomeSeeder::class,
-            ProfessionSeeder::class,
         ]);
     }
 }
