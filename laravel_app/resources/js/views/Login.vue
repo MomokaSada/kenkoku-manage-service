@@ -1,52 +1,65 @@
 <template>
-    <div class="flex items-center justify-center min-h-screen bg-stone-900 pattern-dirt">
-        <div class="w-full max-w-md bg-gray-800 border-4 border-gray-600 shadow-2xl p-8 relative">
-            <!-- Minecraft-like Window Header -->
-            <div class="absolute -top-10 left-0 w-full bg-gray-700 border-4 border-gray-600 border-b-0 h-10 flex items-center px-4">
-                <span class="text-white font-mono font-bold pixel-font text-shadow">AUTHENTICATION</span>
+    <div class="flex items-center justify-center min-h-screen bg-slate-900 font-sans">
+        <div class="w-full max-w-md p-8 bg-slate-800 rounded-2xl shadow-xl">
+            <div class="flex flex-col items-center mb-8">
+                <div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-emerald-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">MCDashboard</h2>
+                <p class="text-slate-400 text-sm mt-1">Manage your Minecraft Server</p>
             </div>
-
-            <h2 class="text-3xl font-bold text-center text-white mb-8 pixel-font text-shadow-sm">Server Login</h2>
             
             <form @submit.prevent="handleLogin" class="space-y-6">
                 <div>
-                    <label class="block text-gray-300 text-sm font-bold mb-2 pixel-font" for="name">
-                        USERNAME
+                    <label class="block text-slate-300 text-sm font-medium mb-2" for="name">
+                        Username
                     </label>
                     <input 
                         v-model="form.name"
                         id="name" 
                         type="text" 
-                        placeholder="Steve"
-                        class="w-full px-4 py-3 bg-black border-2 border-gray-500 text-white placeholder-gray-600 focus:outline-none focus:border-green-500 font-mono"
+                        placeholder="Admin"
+                        class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-200"
                         required
                     />
                 </div>
                 
                 <div>
-                    <label class="block text-gray-300 text-sm font-bold mb-2 pixel-font" for="password">
-                        PASSWORD
+                    <label class="block text-slate-300 text-sm font-medium mb-2" for="password">
+                        Password
                     </label>
                     <input 
                         v-model="form.password"
                         id="password" 
                         type="password" 
-                        placeholder="********"
-                        class="w-full px-4 py-3 bg-black border-2 border-gray-500 text-white placeholder-gray-600 focus:outline-none focus:border-green-500 font-mono"
+                        placeholder="••••••••"
+                        class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-200"
                         required
                     />
                 </div>
 
-                <div v-if="error" class="bg-red-900/50 border border-red-500 text-red-200 px-4 py-2 text-sm pixel-font">
-                    [!] {{ error }}
+                <div v-if="error" class="bg-red-500/10 border border-red-500/50 text-red-500 px-4 py-3 rounded-xl text-sm flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                    {{ error }}
                 </div>
                 
                 <button 
                     type="submit" 
-                    class="w-full bg-gray-500 hover:bg-gray-400 text-white font-bold py-4 px-4 border-b-4 border-gray-700 hover:border-gray-600 active:border-b-0 active:mt-1 active:mb-[-1px] transition-all pixel-font shadow-lg relative top-0"
+                    class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-emerald-500/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-emerald-500 transition-all duration-200 transform hover:-translate-y-0.5"
                     :disabled="loading"
                 >
-                    {{ loading ? 'CONNECTING...' : 'JOIN SERVER' }}
+                    <span v-if="loading" class="flex items-center justify-center">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Connecting...
+                    </span>
+                    <span v-else>Login to Dashboard</span>
                 </button>
             </form>
         </div>
@@ -54,26 +67,7 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-.pixel-font {
-    font-family: 'Press Start 2P', cursive;
-    letter-spacing: -1px;
-}
-.text-shadow {
-    text-shadow: 2px 2px 0px #000;
-}
-.text-shadow-sm {
-    text-shadow: 1px 1px 0px #000;
-}
-.pattern-dirt {
-    background-color: #1a1a1a;
-    background-image: 
-        linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%, #111),
-        linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%, #111);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-}
+/* No custom styles needed, using utility classes */
 </style>
 
 <script setup>

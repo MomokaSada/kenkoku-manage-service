@@ -10,9 +10,7 @@ class Trade extends Model
 {
     protected $fillable = [
         'npc_id',
-        'item_id',
-        'quantity',
-        'price',
+        'content',
     ];
 
     public function npc(): BelongsTo
@@ -20,13 +18,12 @@ class Trade extends Model
         return $this->belongsTo(Npc::class);
     }
 
-    public function item(): BelongsTo
-    {
-        return $this->belongsTo(Item::class);
-    }
-
     public function rewards(): HasMany
     {
         return $this->hasMany(Reward::class);
+    }
+    public function costs(): HasMany
+    {
+        return $this->hasMany(TradeCosts::class);
     }
 }

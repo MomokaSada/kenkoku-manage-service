@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trades', function (Blueprint $table) {
+        Schema::create('server_infos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('npc_id')->constrained()->cascadeOnDelete();
-            $table->string('content');
+            $table->string('name');
+            $table->string('version');
+            $table->string('max_players');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trades');
+        Schema::dropIfExists('server_infos');
     }
 };
