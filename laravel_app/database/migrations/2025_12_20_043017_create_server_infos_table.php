@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('server_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('key');
-            $table->boolean('is_original')->default(false);
-            $table->text('nbt')->nullable();
+            $table->string('name');
+            $table->string('version');
+            $table->string('max_players');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('server_infos');
     }
 };
