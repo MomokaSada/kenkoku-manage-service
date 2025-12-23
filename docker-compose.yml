@@ -6,11 +6,16 @@ services:
     ports:
       - 8000:8000
   db:
-    image: mysql:8.3
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - ./laravel_app/mysql_data:/var/lib/mysql
+      - ./db/mysql_data:/var/lib/mysql
+      - ./db/initdb:/docker-entrypoint-initdb.d:ro
+    env_file:
+      - .env
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: dev
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_USER: ${MYSQL_USER:-minecraft_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-minecraft_password}
     ports:
-      - 3306:3306
+      - "3306:3306"
