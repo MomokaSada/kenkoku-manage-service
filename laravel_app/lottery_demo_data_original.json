@@ -1,0 +1,136 @@
+[
+    {
+        "name": "OriginalLottery",
+        "rarities": [
+            {
+                "name": "Common",
+                "probability": 500,
+                "items": [
+                    {
+                        "key": "minecraft:apple",
+                        "name": "リンゴ",
+                        "is_original": false
+                    },
+                    {
+                        "key": "wallet",
+                        "name": "お財布",
+                        "is_original": true
+                    }
+                ]
+            },
+            {
+                "name": "Uncommon",
+                "probability": 300,
+                "items": [
+                    {
+                        "key": "health_boost_1",
+                        "name": "体力増強(10)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "speed_boost_1",
+                        "name": "スピード(Ⅰ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "haste_boost_1",
+                        "name": "採掘速度(Ⅰ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "jump_boost_1",
+                        "name": "ジャンプ(Ⅰ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "slow_falling",
+                        "name": "低速落下",
+                        "is_original": true
+                    }
+                ]
+            },
+            {
+                "name": "Rare",
+                "probability": 150,
+                "items": [
+                    {
+                        "key": "health_boost_2",
+                        "name": "体力増強(20)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "speed_boost_2",
+                        "name": "スピード(Ⅱ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "haste_boost_2",
+                        "name": "採掘速度(Ⅱ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "jump_boost_2",
+                        "name": "ジャンプ(Ⅱ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "infinite_pearl",
+                        "name": "無限エンパ",
+                        "is_original": true
+                    },
+                    {
+                        "key": "petapeta",
+                        "name": "ぺたぺたくん",
+                        "is_original": true
+                    },
+                    {
+                        "key": "jumpkun",
+                        "name": "ジャンプくん",
+                        "is_original": true
+                    },
+                    {
+                        "key": "sidebar_toggle",
+                        "name": "表示切替 (スコアボード)",
+                        "is_original": true
+                    }
+                ]
+            },
+            {
+                "name": "Epic",
+                "probability": 50,
+                "items": [
+                    {
+                        "key": "health_boost_3",
+                        "name": "体力増強(30)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "speed_boost_3",
+                        "name": "スピード(Ⅲ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "haste_boost_3",
+                        "name": "採掘速度(Ⅲ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "jump_boost_3",
+                        "name": "ジャンプ(Ⅲ)",
+                        "is_original": true
+                    },
+                    {
+                        "key": "fire_resistance",
+                        "name": "火炎耐性",
+                        "is_original": true
+                    },
+                    {
+                        "key": "night_vision",
+                        "name": "暗視",
+                        "is_original": true
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NpcController;
 use App\Http\Controllers\ServerInfoController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\LotteryController; 
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -30,5 +31,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('items')->group(function () {
         Route::get('/', [ItemController::class, 'index']);
         Route::patch('/', [ItemController::class, 'update']);
+    });
+    Route::prefix('lotteries')->group(function () {
+        Route::get('/', [LotteryController::class, 'index']);
+        Route::post('/', [LotteryController::class, 'bulkSave']);
     });
 });
