@@ -1,0 +1,102 @@
+{
+    "store": [
+        {
+            "name": "レアガチャ",
+            "rarities": [
+                {
+                    "name": "SSR",
+                    "probability": 1,
+                    "items": [
+                        1,
+                        5
+                    ]
+                },
+                {
+                    "name": "SR",
+                    "probability": 10,
+                    "items": [
+                        2,
+                        3,
+                        6,
+                        7
+                    ]
+                },
+                {
+                    "name": "R",
+                    "probability": 89,
+                    "items": [
+                        4,
+                        8,
+                        9,
+                        10,
+                        11
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "武器ガチャ",
+            "rarities": [
+                {
+                    "name": "伝説",
+                    "probability": 2,
+                    "items": [
+                        12,
+                        13
+                    ]
+                },
+                {
+                    "name": "激レア",
+                    "probability": 18,
+                    "items": [
+                        14,
+                        15,
+                        16
+                    ]
+                },
+                {
+                    "name": "普通",
+                    "probability": 80,
+                    "items": [
+                        17,
+                        18,
+                        19,
+                        20
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ポーションガチャ",
+            "rarities": [
+                {
+                    "name": "大当たり",
+                    "probability": 5,
+                    "items": [
+                        21
+                    ]
+                },
+                {
+                    "name": "当たり",
+                    "probability": 30,
+                    "items": [
+                        22,
+                        23,
+                        24
+                    ]
+                },
+                {
+                    "name": "ハズレ",
+                    "probability": 65,
+                    "items": [
+                        25,
+                        26,
+                        27,
+                        28,
+                        29
+                    ]
+                }
+            ]
+        }
+    ]
+}

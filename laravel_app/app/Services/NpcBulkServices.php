@@ -72,6 +72,10 @@ class NpcBulkServices
             $tData['content'] = 'Trade'; 
         }
 
+        if (array_key_exists('view_item_id', $tData) && empty($tData['view_item_id'])) {
+            $tData['view_item_id'] = null;
+        }
+
         unset($tData['rewards']);
         unset($tData['costs']); // Remove costs from trade data
         
@@ -105,6 +109,10 @@ class NpcBulkServices
                 $trade = Trade::find($tData['id']);
                 if ($trade && $trade->npc_id == $npc->id) {
                     $tradeFields = $tData;
+                    
+                    if (array_key_exists('view_item_id', $tradeFields) && empty($tradeFields['view_item_id'])) {
+                        $tradeFields['view_item_id'] = null;
+                    }
                     
                     unset($tradeFields['rewards']);
                     unset($tradeFields['costs']);
