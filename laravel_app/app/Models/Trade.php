@@ -11,6 +11,7 @@ class Trade extends Model
     protected $fillable = [
         'npc_id',
         'content',
+        'view_item_id',
     ];
 
     public function npc(): BelongsTo
