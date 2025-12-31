@@ -10,4 +10,8 @@ class ViwController extends Controller
     {
         return view('serverInfo');
     }
+    public function npcSystemInfo()
+    {
+        return view('npcSystemInfo');
+    }
 }
