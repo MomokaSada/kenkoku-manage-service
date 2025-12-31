@@ -278,7 +278,7 @@
 
         <h3>使用方法</h3>
         <ol class="step-list">
-          <li>NPC召喚エッグを<strong>メインハンド</strong>または<strong>オフハンド</strong>に持つ</li>
+          <li>NPC召喚エッグを<strong>メインハンド</strong>に持つ</li>
           <li><strong>右クリック</strong>する</li>
           <li>あなたの足元にNPCが召喚されます</li>
           <li>エッグは消費されます（サバイバルモードのみ）</li>
