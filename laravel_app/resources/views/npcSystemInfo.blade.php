@@ -278,7 +278,7 @@
 
         <h3>使用方法</h3>
         <ol class="step-list">
-          <li>NPC召喚エッグを<strong>メインハンド</strong>に持つ</li>
+          <li>NPC召喚エッグを<strong>メインハンド</strong>または<strong>オフハンド</strong>に持つ</li>
           <li><strong>右クリック</strong>する</li>
           <li>あなたの足元にNPCが召喚されます</li>
           <li>エッグは消費されます（サバイバルモードのみ）</li>
@@ -308,16 +308,11 @@
           <li>クリックして取引を実行</li>
         </ol>
 
-        <h3>取引券システム</h3>
-        <p style="margin-top: 10px;">
-          初めてNPCと取引する際、<strong>取引券</strong>が自動的に64枚付与されます。
-          取引券は取引に使用され、取引後に返却されます。
-        </p>
-
         <div class="info-box" style="margin-top: 15px;">
           <strong>💡 一括取引</strong><br>
-          <strong>Shiftキー + 左クリック</strong>で一括取引が可能です。
-          所持している取引券とアイテムの数だけ、連続して取引を行います。
+          取引画面の右下にある<strong>金塊ボタン</strong>をクリックすることで、
+          取引量を <strong>x1 → x16 → x32 → x48 → x64</strong> と切り替えることができます。<br>
+          設定した個数分、連続して取引を行います。
         </div>
       </div>
     </div>
