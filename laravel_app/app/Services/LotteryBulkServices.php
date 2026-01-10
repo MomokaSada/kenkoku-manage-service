@@ -23,10 +23,14 @@ class LotteryBulkServices
                     $rarity = $lottery->rarities()->create($rarityFields);
 
                     if (isset($rarityData['items'])) {
-                        foreach ($rarityData['items'] as $itemId) {
+                        foreach ($rarityData['items'] as $itemData) {
+                            $itemId = is_array($itemData) ? $itemData['item_id'] : $itemData;
+                            $quantity = is_array($itemData) ? ($itemData['quantity'] ?? 1) : 1;
+
                             $rarity->lotteryItems()->create([
                                 'lottery_id' => $lottery->id,
-                                'item_id' => $itemId
+                                'item_id' => $itemId,
+                                'quantity' => $quantity,
                             ]);
                         }
                     }
@@ -80,10 +84,14 @@ class LotteryBulkServices
                 $rarity = $lottery->rarities()->create($rarityFields);
 
                 if (isset($rData['items'])) {
-                    foreach ($rData['items'] as $itemId) {
+                    foreach ($rData['items'] as $itemData) {
+                        $itemId = is_array($itemData) ? $itemData['item_id'] : $itemData;
+                        $quantity = is_array($itemData) ? ($itemData['quantity'] ?? 1) : 1;
+
                         $rarity->lotteryItems()->create([
                             'lottery_id' => $lottery->id,
-                            'item_id' => $itemId
+                            'item_id' => $itemId,
+                            'quantity' => $quantity,
                         ]);
                     }
                 }
@@ -91,21 +99,37 @@ class LotteryBulkServices
         }
     }
 
-    private function syncItems($lottery, $rarity, $itemsIds)
+    private function syncItems($lottery, $rarity, $itemsData)
     {
+        // Normalize input: itemId => quantity
+        $targetItems = [];
+        foreach ($itemsData as $item) {
+            if (is_array($item)) {
+                $targetItems[$item['item_id']] = $item['quantity'] ?? 1;
+            } else {
+                $targetItems[$item] = 1;
+            }
+        }
+        $targetIds = array_keys($targetItems);
+
         // Delete items that are not in the new list
-        $rarity->lotteryItems()->whereNotIn('item_id', $itemsIds)->delete();
+        $rarity->lotteryItems()->whereNotIn('item_id', $targetIds)->delete();
 
-        // Get existing item_ids to avoid duplicates if necessary, or just check existence
-        $existingItemIds = $rarity->lotteryItems()->pluck('item_id')->toArray();
+        // Update existing or create new
+        foreach ($targetItems as $itemId => $quantity) {
+            $lotteryItem = $rarity->lotteryItems()->where('item_id', $itemId)->first();
 
-        foreach ($itemsIds as $itemId) {
-             if (!in_array($itemId, $existingItemIds)) {
-                 $rarity->lotteryItems()->create([
-                     'lottery_id' => $lottery->id,
-                     'item_id' => $itemId
-                 ]);
-             }
+            if ($lotteryItem) {
+                if ($lotteryItem->quantity != $quantity) {
+                    $lotteryItem->update(['quantity' => $quantity]);
+                }
+            } else {
+                $rarity->lotteryItems()->create([
+                    'lottery_id' => $lottery->id,
+                    'item_id' => $itemId,
+                    'quantity' => $quantity,
+                ]);
+            }
         }
     }
 }

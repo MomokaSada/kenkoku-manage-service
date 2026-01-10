@@ -10,6 +10,7 @@ class LotteryItems extends Model
         'lottery_id',
         'item_id',
         'rarity_id',
+        'quantity',
     ];
 
     public function lottery()
