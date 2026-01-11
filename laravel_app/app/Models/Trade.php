@@ -12,6 +12,7 @@ class Trade extends Model
         'npc_id',
         'content',
         'view_item_id',
+        'slot',
     ];
 
     public function npc(): BelongsTo

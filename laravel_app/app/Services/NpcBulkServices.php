@@ -30,11 +30,54 @@ class NpcBulkServices
             $npc = Npc::create($npcData);
 
             if (isset($data['trades'])) {
-                foreach ($data['trades'] as $tradeData) {
+                $tradesWithSlots = $this->assignSlots($data['trades']);
+                foreach ($tradesWithSlots as $tradeData) {
                     $this->createTrade($npc, $tradeData);
                 }
             }
         }
+    }
+
+    /**
+     * Assign slots to trades.
+     * - Trades with explicit slot numbers take priority
+     * - Trades with null slots are assigned to available positions sequentially
+     */
+    private function assignSlots($tradesData)
+    {
+        $result = [];
+        $explicitSlots = [];
+        $nullSlotTrades = [];
+
+        // Separate trades with explicit slots and null slots
+        foreach ($tradesData as $trade) {
+            if (isset($trade['slot']) && $trade['slot'] !== null) {
+                $explicitSlots[(int)$trade['slot']] = $trade;
+            } else {
+                $nullSlotTrades[] = $trade;
+            }
+        }
+
+        // Assign null slot trades to available positions
+        $slot = 0;
+        foreach ($nullSlotTrades as $trade) {
+            // Find next available slot (skip slots that are explicitly assigned)
+            while (isset($explicitSlots[$slot])) {
+                $slot++;
+            }
+            $trade['slot'] = $slot;
+            $result[$slot] = $trade;
+            $slot++;
+        }
+
+        // Merge explicit slots (they take priority/override)
+        foreach ($explicitSlots as $slotNum => $trade) {
+            $result[$slotNum] = $trade;
+        }
+
+        // Sort by slot number and return as indexed array
+        ksort($result);
+        return array_values($result);
     }
 
     public function patch($dataList)
@@ -53,7 +96,8 @@ class NpcBulkServices
             $npc->update($npcData);
 
             if (isset($data['trades'])) {
-                $this->syncTrades($npc, $data['trades']);
+                $tradesWithSlots = $this->assignSlots($data['trades']);
+                $this->syncTrades($npc, $tradesWithSlots);
             }
         }
     }
