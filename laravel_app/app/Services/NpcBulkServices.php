@@ -88,6 +88,7 @@ class NpcBulkServices
 
             $npcData = $data;
             unset($npcData['trades']);
+            unset($npcData['add_trades']);
             if (isset($npcData['type']) && !isset($npcData['npc_type_id'])) {
                 $npcData['npc_type_id'] = $npcData['type'];
                 unset($npcData['type']);
@@ -98,6 +99,18 @@ class NpcBulkServices
             if (isset($data['trades'])) {
                 $tradesWithSlots = $this->assignSlots($data['trades']);
                 $this->syncTrades($npc, $tradesWithSlots);
+            }
+
+            if (isset($data['add_trades'])) {
+                $currentMaxSlot = $npc->trades()->max('slot') ?? -1;
+                $nextSlot = $currentMaxSlot + 1;
+
+                foreach ($data['add_trades'] as $tradeData) {
+                    if (!isset($tradeData['slot'])) {
+                        $tradeData['slot'] = $nextSlot++;
+                    }
+                    $this->createTrade($npc, $tradeData);
+                }
             }
         }
     }

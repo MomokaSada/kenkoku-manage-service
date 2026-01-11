@@ -521,7 +521,7 @@
     <!-- 施設 -->
     <div class="card full-width">
       <h2>🏢 施設</h2>
-      <p class="note">建物を建てた後にNPCを置いてそこで買い物をしたり、便利な効果を得たりできる。NPCを置くためには街を発展させてNPC交換券を入手する必要がある。</p>
+      <p class="note">建物を建てた後にNPCを置いてそこで買い物をしたり、便利な効果を得たりできる。NPCを入手するには、ダイヤモンド10個と交換（取引）する必要がある。</p>
 
       <h3>馬車屋</h3>
       <p>国の2点をお金を払うことでテレポートできる。</p>
@@ -559,6 +559,14 @@
           <td>ランタン</td>
           <td class="price-value">100</td>
         </tr>
+        <tr>
+          <td>お財布</td>
+          <td class="price-value">1,000</td>
+        </tr>
+        <tr>
+          <td>表示切替 (スコアボード)</td>
+          <td class="price-value">1,000</td>
+        </tr>
       </table>
       <h4 style="margin-top: 10px; color: var(--gold-color);">※ツールチケットで１つと交換</h4>
       <ul class="item-list rare-item">
@@ -594,6 +602,24 @@
         <li>ダイヤ剣 (耐久Ⅲ、ノックバックX)</li>
         <li>トライデント (耐久Ⅲ、忠誠Ⅲ、水棲Ⅵ)</li>
         <li>弓 (耐久Ⅲ、無限、修繕、ノックバックX)</li>
+      </ul>
+
+      <h3>防具交換所 (チケット)</h3>
+      <p class="note">防具チケットと交換可能</p>
+      
+      <h4>無制限</h4>
+      <ul class="item-list">
+        <li>ダイヤのヘルメット (水中呼吸 III)</li>
+        <li>ダイヤのヘルメット (水中呼吸 I)</li>
+        <li>ダイヤのブーツ (水中歩行 III)</li>
+      </ul>
+
+      <h4>初回限定 (最強防具)</h4>
+      <ul class="item-list super-rare-item">
+        <li>ダイヤのヘルメット (防護V、耐久V)</li>
+        <li>ダイヤのチェストプレート (防護V、耐久V)</li>
+        <li>ダイヤのレギンス (防護V、耐久V)</li>
+        <li>ダイヤのブーツ (防護V、耐久V)</li>
       </ul>
 
       <h3>本屋</h3>
@@ -679,6 +705,26 @@
           <td>雪ブロック ×2</td>
           <td class="quest-reward">チケット ×10</td>
         </tr>
+        <tr>
+          <td>ケーキ</td>
+          <td>ケーキ ×1</td>
+          <td class="quest-reward">福引券 ×1</td>
+        </tr>
+        <tr>
+          <td>ビートルート</td>
+          <td>ビートルート ×16</td>
+          <td class="quest-reward">福引券 ×1</td>
+        </tr>
+        <tr>
+          <td>パンプキンパイ</td>
+          <td>パンプキンパイ ×1</td>
+          <td class="quest-reward">福引券 ×1</td>
+        </tr>
+        <tr>
+          <td>クッキー</td>
+          <td>クッキー ×16</td>
+          <td class="quest-reward">福引券 ×1</td>
+        </tr>
       </table>
 
       <h3>★★ (中級)</h3>
@@ -708,6 +754,31 @@
           <td>ハチミツブロック ×4</td>
           <td class="quest-reward">チケット ×20</td>
         </tr>
+        <tr>
+          <td>熱帯魚</td>
+          <td>熱帯魚 ×16</td>
+          <td class="quest-reward">福引券 ×2</td>
+        </tr>
+        <tr>
+          <td>鱈</td>
+          <td>鱈 ×64</td>
+          <td class="quest-reward">福引券 ×2</td>
+        </tr>
+        <tr>
+          <td>鮭</td>
+          <td>鮭 ×64</td>
+          <td class="quest-reward">福引券 ×2</td>
+        </tr>
+        <tr>
+          <td>うさぎの皮</td>
+          <td>うさぎの皮 ×4</td>
+          <td class="quest-reward">福引券 ×2</td>
+        </tr>
+        <tr>
+          <td>青緑の染料</td>
+          <td>青緑の染料 ×16</td>
+          <td class="quest-reward">福引券 ×2</td>
+        </tr>
       </table>
 
       <h3>★★★ (上級)</h3>
@@ -736,6 +807,16 @@
           <td>ホットな羽付き大会</td>
           <td>ガストの涙 ×3</td>
           <td class="quest-reward">チケット ×30</td>
+        </tr>
+        <tr>
+          <td>古代の残骸</td>
+          <td>古代の残骸 ×1</td>
+          <td class="quest-reward">福引券 ×3</td>
+        </tr>
+        <tr>
+          <td>エンドクリスタル</td>
+          <td>エンドクリスタル ×1</td>
+          <td class="quest-reward">福引券 ×3</td>
         </tr>
       </table>
 
