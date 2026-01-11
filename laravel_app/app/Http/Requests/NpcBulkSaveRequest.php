@@ -47,6 +47,7 @@ class NpcBulkSaveRequest extends FormRequest
                     }
                 },
             ],
+            'patch.*.add_trades' => 'nullable|array',
             
             'delete.*' => 'exists:npcs,id',
         ];
