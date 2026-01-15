@@ -673,57 +673,57 @@
         <tr>
           <td>街のお掃除</td>
           <td>落ち葉 ×64</td>
-          <td class="quest-reward">チケット ×10</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>珍味？</td>
           <td>金リンゴ ×1</td>
-          <td class="quest-reward">チケット ×10</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>ダイヤ発見記念</td>
           <td>ダイヤ ×1</td>
-          <td class="quest-reward">チケット ×10</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>アメジスト発見記念</td>
           <td>アメジストブロック ×10</td>
-          <td class="quest-reward">チケット ×10</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>スローライフ</td>
           <td>生鮭 ×16</td>
-          <td class="quest-reward">チケット ×10</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>モンスターハンター</td>
           <td>腐肉 ×16</td>
-          <td class="quest-reward">チケット ×10</td>
+          <td class="quest-reward">福引権 ×10</td>
         </tr>
         <tr>
           <td>雪だるま</td>
           <td>雪ブロック ×2</td>
-          <td class="quest-reward">チケット ×10</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>ケーキ</td>
           <td>ケーキ ×1</td>
-          <td class="quest-reward">福引券 ×1</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>ビートルート</td>
           <td>ビートルート ×16</td>
-          <td class="quest-reward">福引券 ×1</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>パンプキンパイ</td>
           <td>パンプキンパイ ×1</td>
-          <td class="quest-reward">福引券 ×1</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
         <tr>
           <td>クッキー</td>
           <td>クッキー ×16</td>
-          <td class="quest-reward">福引券 ×1</td>
+          <td class="quest-reward">福引券 ×10</td>
         </tr>
       </table>
 
@@ -737,47 +737,47 @@
         <tr>
           <td>リッチな昼食</td>
           <td>うさぎシチュー ×1</td>
-          <td class="quest-reward">チケット ×20</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>硬くて溶けない氷</td>
           <td>氷塊 ×1</td>
-          <td class="quest-reward">チケット ×20</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>ブヨブヨしてる緑な奴</td>
           <td>スライムブロック ×4</td>
-          <td class="quest-reward">チケット ×20</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>ブヨブヨしてる甘い奴</td>
           <td>ハチミツブロック ×4</td>
-          <td class="quest-reward">チケット ×20</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>熱帯魚</td>
           <td>熱帯魚 ×16</td>
-          <td class="quest-reward">福引券 ×2</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>鱈</td>
           <td>鱈 ×64</td>
-          <td class="quest-reward">福引券 ×2</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>鮭</td>
           <td>鮭 ×64</td>
-          <td class="quest-reward">福引券 ×2</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>うさぎの皮</td>
           <td>うさぎの皮 ×4</td>
-          <td class="quest-reward">福引券 ×2</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
         <tr>
           <td>青緑の染料</td>
           <td>青緑の染料 ×16</td>
-          <td class="quest-reward">福引券 ×2</td>
+          <td class="quest-reward">福引券 ×20</td>
         </tr>
       </table>
 
@@ -791,32 +791,32 @@
         <tr>
           <td>うさぎ討伐隊</td>
           <td>うさぎの足 ×4</td>
-          <td class="quest-reward">チケット ×30</td>
+          <td class="quest-reward">福引券 ×30</td>
         </tr>
         <tr>
           <td>お豆腐屋さん</td>
           <td>ハッピーガスト ×3</td>
-          <td class="quest-reward">チケット ×30</td>
+          <td class="quest-reward">福引券 ×30</td>
         </tr>
         <tr>
           <td>イカしたフィスを探せ</td>
           <td>ウィザースケルトンの頭</td>
-          <td class="quest-reward">チケット ×30</td>
+          <td class="quest-reward">福引券 ×30</td>
         </tr>
         <tr>
           <td>ホットな羽付き大会</td>
           <td>ガストの涙 ×3</td>
-          <td class="quest-reward">チケット ×30</td>
+          <td class="quest-reward">福引券 ×30</td>
         </tr>
         <tr>
           <td>古代の残骸</td>
           <td>古代の残骸 ×1</td>
-          <td class="quest-reward">福引券 ×3</td>
+          <td class="quest-reward">福引券 ×30</td>
         </tr>
         <tr>
           <td>エンドクリスタル</td>
           <td>エンドクリスタル ×1</td>
-          <td class="quest-reward">福引券 ×3</td>
+          <td class="quest-reward">福引券 ×30</td>
         </tr>
       </table>
 
